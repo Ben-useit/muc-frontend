@@ -1,17 +1,19 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Layout from "./pages/Layout";
-import DocumentList from "./pages/DocumentList";
-import About from "./pages/About";
-import Login from "./pages/Login";
-import ProtectedPage from "./pages/ProtectedPage";
-import Welcome from "./pages/Welcome";
-import Register from "./pages/Register";
-import SinglePageError from "./pages/SinglePageError";
-import DocumentPages from "./pages/DocumentPages";
-import SearchForm from "./pages/SearchForm";
-import { loader as documentsLoader } from "./pages/DocumentList";
-import { loader as pagesLoader } from "./pages/DocumentPages";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Layout from './pages/Layout';
+import DocumentList from './pages/DocumentList';
+import About from './pages/About';
+import Login from './pages/Login';
+import ProtectedPage from './pages/ProtectedPage';
+import Welcome from './pages/Welcome';
+import Register from './pages/Register';
+import SinglePageError from './pages/SinglePageError';
+import DocumentPages from './pages/DocumentPages';
+import SearchForm from './pages/SearchForm';
+import { loader as documentsLoader } from './pages/DocumentList';
+import { loader as pagesLoader } from './pages/DocumentPages';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import User from './pages/User';
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -22,27 +24,31 @@ const queryClient = new QueryClient({
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Layout />,
     children: [
       {
-        path: "/about",
+        path: '/about',
         element: <About />,
       },
       {
-        path: "/welcome",
+        path: '/welcome',
         element: <Welcome />,
       },
       {
-        path: "/login",
+        path: '/login',
         element: <Login />,
       },
       {
-        path: "/register",
+        path: '/register',
         element: <Register />,
       },
       {
-        path: "/",
+        path: '/user/verify-email',
+        element: <User />,
+      },
+      {
+        path: '/',
         element: <ProtectedPage />,
         children: [
           {
@@ -52,7 +58,7 @@ const router = createBrowserRouter([
             errorElement: <SinglePageError />,
           },
           {
-            path: "/:id",
+            path: '/:id',
             element: <DocumentPages />,
             loader: pagesLoader(queryClient),
             errorElement: <SinglePageError />,

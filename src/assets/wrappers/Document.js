@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   .px-4 {
@@ -26,6 +26,12 @@ const Wrapper = styled.div`
       height: 12rem;
     }
   }
+  .card-box {
+    background-color: green;
+    border-radius: 8px;
+    margin: 24px;
+    box-shadow: 10px 10px lightgray;
+  }
   .card-body {
     display: flex;
     flex: 1 1 auto;
@@ -43,6 +49,8 @@ const Wrapper = styled.div`
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    font-size: 0.9rem;
+    color: white;
   }
 
   .card-title {
@@ -61,7 +69,9 @@ const Wrapper = styled.div`
   }
   .text-secondary {
     --tw-text-opacity: 1;
-    color: hsl(var(--s) / var(--tw-text-opacity));
+    font-size: 0.8rem;
+    /* color: hsl(var(--s) / var(--tw-text-opacity)); */
+    color: white;
   }
   /* unvisited link */
   a:link {

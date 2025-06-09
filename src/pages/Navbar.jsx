@@ -1,17 +1,17 @@
-import { Link } from "react-router-dom";
-import Wrapper from "../assets/wrappers/Navbar";
-import { useAppContext } from "../context";
+import { Link } from 'react-router-dom';
+import Wrapper from '../assets/wrappers/Navbar';
+import { useAppContext } from '../context';
 const Navbar = () => {
   const { user, logoutUser } = useAppContext();
   return (
     <Wrapper>
-      <div className="nav-center">
-        <span className="logo">Malawi Unreported Cases</span>
-        <div className="nav-links">
-          <Link to="/" className="nav-link">
+      <div className='nav-center'>
+        <span className='logo'>Global Unreported Cases</span>
+        <div className='nav-links'>
+          <Link to='/' className='nav-link'>
             Home
           </Link>
-          <Link to="/about" className="nav-link">
+          <Link to='/about' className='nav-link'>
             About
           </Link>
           {user && (
@@ -19,7 +19,7 @@ const Navbar = () => {
               onClick={() => {
                 logoutUser();
               }}
-              className="nav-link"
+              className='nav-link'
             >
               Logout
             </Link>

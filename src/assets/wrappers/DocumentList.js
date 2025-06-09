@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   .flex {
@@ -38,6 +38,16 @@ const Wrapper = styled.div`
   }
   .gap-4 {
     gap: 1rem;
+  }
+  .active {
+    font-weight: 800;
+    color: red;
+  }
+  .p {
+    padding: 8px;
+  }
+  .ml-8 {
+    margin-left: 2rem;
   }
 
   @media (min-width: 768px) {

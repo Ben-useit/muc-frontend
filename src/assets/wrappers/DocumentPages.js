@@ -1,6 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
+  .box {
+    display: block;
+    margin: 24px;
+  }
   main {
     min-height: 100vh;
     display: grid;
@@ -12,7 +16,7 @@ const Wrapper = styled.div`
   }
   .category-name {
     font-size: 1rem;
-    padding-bottom: 0.5rem;
+    padding-bottom: 1.5rem;
   }
   .review {
     #width: 90vw;

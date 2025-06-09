@@ -1,19 +1,19 @@
-import { useMutation, useQueryClient, useQuery } from "@tanstack/react-query";
-import Wrapper from "../assets/wrappers/Login";
-import { Form, useNavigate, redirect } from "react-router-dom";
-import axios from "axios";
-import { useState } from "react";
-import { useAppContext } from "../context";
-import useLocalState from "../utils/localState";
-import customFetch from "../axios";
+import { useMutation, useQueryClient, useQuery } from '@tanstack/react-query';
+import Wrapper from '../assets/wrappers/Login';
+import { Form, useNavigate, redirect } from 'react-router-dom';
+import axios from 'axios';
+import { useState } from 'react';
+import { useAppContext } from '../context';
+import useLocalState from '../utils/localState';
+import customFetch from '../axios';
 
 const Login = () => {
   const { user, setUser } = useAppContext();
   const navigate = useNavigate();
 
   const [values, setValues] = useState({
-    email: "",
-    password: "",
+    email: '',
+    password: '',
   });
 
   const { alert, showAlert, loading, setLoading, hideAlert } = useLocalState();
@@ -27,18 +27,18 @@ const Login = () => {
     const { email, password } = values;
     const loginUser = { email, password };
     try {
-      const { data } = await customFetch.post("/auth/login", loginUser);
-      setValues({ name: "", email: "", password: "" });
+      const { data } = await customFetch.post('/auth/login', loginUser);
+      setValues({ name: '', email: '', password: '' });
       showAlert({
         text: `Welcome, ${data.user.name}. Redirecting to dashboard...`,
-        type: "success",
+        type: 'success',
       });
       setLoading(false);
       setUser(data.user);
-      navigate("/");
+      navigate('/');
     } catch (error) {
       showAlert({ text: error.response.data.msg });
-      console.log("login error: ", error.response.data.msg);
+      console.log('login error: ', error.response.data.msg);
       setLoading(false);
     }
   };
@@ -48,36 +48,36 @@ const Login = () => {
       {alert.show && (
         <div className={`alert alert-${alert.type}`}>{alert.text}</div>
       )}
-      <div className="page">
-        <Form className="form" method="POST" onSubmit={onSubmit}>
-          <div className="form-row">
-            <label htmlFor="email" className="form-label">
+      <div className='page'>
+        <Form className='form' method='POST' onSubmit={onSubmit}>
+          <div className='form-row'>
+            <label htmlFor='email' className='form-label'>
               email
             </label>
             <input
-              type="text"
-              className="form-input"
-              name="email"
-              id="email"
+              type='text'
+              className='form-input'
+              name='email'
+              id='email'
               onChange={handleChange}
             />
           </div>
-          <div className="form-row">
-            <label htmlFor="password" className="form-label">
+          <div className='form-row'>
+            <label htmlFor='password' className='form-label'>
               password
             </label>
             <input
-              type="password"
-              className="form-input"
-              name="password"
-              id="password"
+              type='password'
+              className='form-input'
+              name='password'
+              id='password'
               onChange={handleChange}
             />
           </div>
           <button
-            type="submit"
-            className="btn btn-block"
-            style={{ margin: "0.5rem" }}
+            type='submit'
+            className='btn btn-block'
+            style={{ margin: '0.5rem' }}
           >
             submit
           </button>
