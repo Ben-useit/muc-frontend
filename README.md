@@ -27,4 +27,4 @@ npm install
 
 ### Important links
 
-Frontend App : [MUC Frontend](https://github.com/Ben-useit/muc-backend)
+Frontend App : [MUC Backend](https://github.com/Ben-useit/muc-backend)
