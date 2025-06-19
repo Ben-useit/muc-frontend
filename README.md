@@ -1,8 +1,30 @@
-# React + Vite
+# MUC – Frontend App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Just a playground App to try some NodeJs / React features.
 
-Currently, two official plugins are available:
+This is the React Frontend part.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**axios**, **react-query**
+
+### Required
+
+1\. A backend app ( [MUC Backend](https://github.com/Ben-useit/muc-backendend) ) running on port 3005
+
+2\. .env file in the root directory:
+
+VITE_IMAGES_URL=<http://localhost:3005/>
+
+## Installation
+
+mdkir &lt;Project Directory&gt;  
+cd &lt;Project Directory&gt;
+
+git clone <https://github.com/Ben-useit/muc-frontend.git>
+
+cd muc-frontend
+
+npm install
+
+### Important links
+
+Frontend App : [MUC Frontend](https://github.com/Ben-useit/muc-frontend)
