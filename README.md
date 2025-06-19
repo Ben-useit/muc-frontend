@@ -8,7 +8,7 @@ This is the React Frontend part.
 
 ### Required
 
-1\. A backend app ( [MUC Backend](https://github.com/Ben-useit/muc-backendend) ) running on port 3005
+1\. A backend app ( [MUC Backend](https://github.com/Ben-useit/muc-backend) ) running on port 3005
 
 2\. .env file in the root directory:
 
